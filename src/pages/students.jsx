@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import Profilecard from "@/component/profilecard/profilecard";
 import Sidebars from "@/component/sidebar/sidebar";
 import { Button } from "@/components/ui/button";
+import StudentForm from "@/component/form/studentForm";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const Students = () => {
   const [profiles, setProfiles] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/students")
@@ -20,10 +23,22 @@ const Students = () => {
         <Sidebars />
       </div>
       <div className="fixed top-4 right-4">
-        <Button className="bg-white hover:bg-gray-200 text-black border border-gray-300">
+        <Button 
+         onClick={() => setShowForm(true)}
+        className="bg-white hover:bg-gray-200 text-black border border-gray-300">
           Add New Students
         </Button>
       </div>
+
+      {/* Student Form Modal */}
+      <Dialog open={showForm} onOpenChange={setShowForm}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Register New Student</DialogTitle>
+          </DialogHeader>
+          <StudentForm onClose={() => setShowForm(false)} />
+        </DialogContent>
+      </Dialog>
 
       {/* Main Content */}
       <div className="flex-1 ml-64 mt-15 p-4">
