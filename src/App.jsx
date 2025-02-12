@@ -1,0 +1,26 @@
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
+import Dashboard from "./pages/dashboard";
+import Sidebars from "./component/sidebar/sidebar";
+import Students from "./pages/students";
+import Profilecard from "./component/profilecard/profilecard";
+
+
+const App = () => {
+  return (
+    
+      <div className=" ">
+
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/students" element={<Students />} />
+        <Route path="/sidebar" element={<Sidebars />} />
+      </Routes>
+      </div>
+    
+  );
+};
+
+export default App;
