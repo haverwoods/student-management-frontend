@@ -3,6 +3,13 @@ import { Card } from "@/components/ui/card";
 import { User } from "lucide-react";
 
 const Profilecard = ({ student }) => {
+  const dob = new Date(student.dateOfBirth); 
+
+const newdob = dob.toLocaleDateString('en-US', { // Adjust locale as needed
+    year: 'numeric',
+    month: 'long', // or 'short' or 'numeric'
+    day: 'numeric' 
+});
   return (
     <Card className="w-72 bg-white rounded-xl shadow-lg overflow-hidden">
       {/* Header Section */}
@@ -22,10 +29,10 @@ const Profilecard = ({ student }) => {
 
       {/* Summary Section */}
       <div className="px-4 pb-2">
-        <h3 className="text-sm text-gray-600 font-medium">Summary</h3>
-        <p className="text-sm text-gray-500 mt-1">
+        <h3 className="text-sm text-gray-600 font-medium">profile details</h3>
+        {/* <p className="text-sm text-gray-500 mt-1">
           Student in Grade {student.grade} {student.section}
-        </p>
+        </p> */}
       </div>
 
       {/* Stats Section */}
@@ -38,8 +45,14 @@ const Profilecard = ({ student }) => {
             </span>
           </div>
           <div className="flex justify-between items-center">
+            <span className="text-gray-600">Grade</span>
+            <span className="text-gray-900">
+            {student.grade} {student.section}
+            </span>
+          </div>
+          <div className="flex justify-between items-center">
             <span className="text-gray-600">DOB</span>
-            <span className="text-gray-900">{student.dateOfBirth}</span>
+            <span className="text-gray-900">{newdob}</span>
           </div>
           <div className="flex justify-between items-center">
             <span className="text-gray-600">Contact</span>

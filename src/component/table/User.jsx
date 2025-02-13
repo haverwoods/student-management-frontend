@@ -12,7 +12,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-const Student = () => {
+const User = () => {
   const [users, setuser] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -73,4 +73,4 @@ const Student = () => {
   );
 };
 
-export default Student;
+export default User;

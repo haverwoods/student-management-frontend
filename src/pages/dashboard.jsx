@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, ShoppingCart, TrendingUp, Truck } from "lucide-react";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
@@ -17,52 +17,46 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import StatCard from "@/component/statscard/statscard";
-import Order from "@/component/table/student";
+import student from "@/component/table/User";
 import Sidebars from "@/component/sidebar/sidebar";
+import Student from "@/component/table/User";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import UserForm from "@/component/table/userform";
 
 // Dashboard component that displays an area chart with sales data
 const Dashboard = () => {
-  // Data for the chart (monthly sales of shoes and t-shirts)
-//   const chartData = [
-//     { month: "January", shoe: 186, tshirt: 80 },
-//     { month: "February", shoe: 305, tshirt: 200 },
-//     { month: "March", shoe: 237, tshirt: 120 },
-//     { month: "April", shoe: 73, tshirt: 190 },
-//     { month: "May", shoe: 209, tshirt: 130 },
-//     { month: "June", shoe: 214, tshirt: 140 },
-//     { month: "July", shoe: 195, tshirt: 150 },
-//     { month: "August", shoe: 320, tshirt: 210 },
-//     { month: "September", shoe: 250, tshirt: 170 },
-//     { month: "October", shoe: 280, tshirt: 180 },
-//     { month: "November", shoe: 198, tshirt: 160 },
-//     { month: "December", shoe: 310, tshirt: 220 },
-//   ];
-const chartData = [
-    { month: 'Jan', totalStudents: 850, newEnrollments: 50 },
-    { month: 'Feb', totalStudents: 890, newEnrollments: 40 },
-    { month: 'Mar', totalStudents: 920, newEnrollments: 30 },
-    { month: 'Apr', totalStudents: 900, newEnrollments: 20 },
-    { month: 'May', totalStudents: 880, newEnrollments: 15 },
-    { month: 'Jun', totalStudents: 850, newEnrollments: 10 },
-    { month: 'Jul', totalStudents: 840, newEnrollments: 25 },
-    { month: 'Aug', totalStudents: 920, newEnrollments: 80 },
-    { month: 'Sep', totalStudents: 980, newEnrollments: 60 },
-    { month: 'Oct', totalStudents: 995, newEnrollments: 25 },
-    { month: 'Nov', totalStudents: 985, newEnrollments: 20 },
-    { month: 'Dec', totalStudents: 975, newEnrollments: 15 }
+  // Data for the area chart
+  const chartData = [
+    { month: "Jan", totalStudents: 850, newEnrollments: 50 },
+    { month: "Feb", totalStudents: 890, newEnrollments: 40 },
+    { month: "Mar", totalStudents: 920, newEnrollments: 30 },
+    { month: "Apr", totalStudents: 900, newEnrollments: 20 },
+    { month: "May", totalStudents: 880, newEnrollments: 15 },
+    { month: "Jun", totalStudents: 850, newEnrollments: 10 },
+    { month: "Jul", totalStudents: 840, newEnrollments: 25 },
+    { month: "Aug", totalStudents: 920, newEnrollments: 80 },
+    { month: "Sep", totalStudents: 980, newEnrollments: 60 },
+    { month: "Oct", totalStudents: 995, newEnrollments: 25 },
+    { month: "Nov", totalStudents: 985, newEnrollments: 20 },
+    { month: "Dec", totalStudents: 975, newEnrollments: 15 },
   ];
+    const [showForm, setShowForm] = useState(false);
   // Configuration for chart colors and labels
-const chartConfig = {
-  totalStudents: {
-    label: "Total Students",
-    color: "#FF5252", // Vibrant red
-  },
-  newEnrollments: {
-    label: "New Enrollments",
-    color: "#40C4FF", // Bright blue
-  },
-};
-
+  const chartConfig = {
+    totalStudents: {
+      label: "Total Students",
+      color: "#FF5252", // Vibrant red
+    },
+    newEnrollments: {
+      label: "New Enrollments",
+      color: "#40C4FF", // Bright blue
+    },
+  };
 
   return (
     <div>
@@ -180,7 +174,31 @@ const chartConfig = {
               </CardFooter>
             </Card>
             {/* // Table for displaying recent orders */}
-            <Order />
+            <div className="mt-5 flex flex-col gap-4">
+              {/* Button Container */}
+              <div className="flex justify-end">
+                <Button
+                  onClick={() => setShowForm(true)}
+                  className="bg-white hover:bg-gray-200 text-black border border-gray-300"
+                >
+                  Add New User
+                </Button>
+                {/* Student Form Modal */}
+                <Dialog open={showForm} onOpenChange={setShowForm}>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Add New user</DialogTitle>
+                    </DialogHeader>
+                    <UserForm onClose={() => setShowForm(false)} />
+                  </DialogContent>
+                </Dialog>
+              </div>
+
+              {/* Table Component */}
+              <div>
+                <Student />
+              </div>
+            </div>
           </div>
         </div>
       </div>
