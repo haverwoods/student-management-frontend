@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag, ShoppingCart, TrendingUp, Truck } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid, Label, XAxis } from "recharts";
 import { motion } from "framer-motion";
 import {
   Card,
@@ -30,6 +30,15 @@ import UserForm from "@/component/table/userform";
 
 // Dashboard component that displays an area chart with sales data
 const Dashboard = () => {
+  const [profiles, setProfiles] = useState([]);
+  // const [showForm, setShowForm] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/api/students")
+      .then((res) => res.json())
+      .then((data) => setProfiles(data))
+      .catch((error) => console.error("Error fetching profiles:", error));
+  }, []);
   // Data for the area chart
   const chartData = [
     { month: "Jan", totalStudents: 850, newEnrollments: 50 },
@@ -45,7 +54,7 @@ const Dashboard = () => {
     { month: "Nov", totalStudents: 985, newEnrollments: 20 },
     { month: "Dec", totalStudents: 975, newEnrollments: 15 },
   ];
-    const [showForm, setShowForm] = useState(false);
+  const [showForm, setShowForm] = useState(false);
   // Configuration for chart colors and labels
   const chartConfig = {
     totalStudents: {
@@ -173,6 +182,7 @@ const Dashboard = () => {
                 </div>
               </CardFooter>
             </Card>
+
             {/* // Table for displaying recent orders */}
             <div className="mt-5 flex flex-col gap-4">
               {/* Button Container */}
@@ -183,6 +193,7 @@ const Dashboard = () => {
                 >
                   Add New User
                 </Button>
+
                 {/* Student Form Modal */}
                 <Dialog open={showForm} onOpenChange={setShowForm}>
                   <DialogContent>

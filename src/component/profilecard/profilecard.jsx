@@ -4,8 +4,14 @@ import { User } from "lucide-react";
 
 const Profilecard = ({ student }) => {
   const dob = new Date(student.dateOfBirth); 
+  const created = new Date(student.createdAt);
 
 const newdob = dob.toLocaleDateString('en-US', { // Adjust locale as needed
+    year: 'numeric',
+    month: 'long', // or 'short' or 'numeric'
+    day: 'numeric' 
+});
+const createdat = created.toLocaleDateString('en-US', { // Adjust locale as needed
     year: 'numeric',
     month: 'long', // or 'short' or 'numeric'
     day: 'numeric' 
@@ -57,6 +63,10 @@ const newdob = dob.toLocaleDateString('en-US', { // Adjust locale as needed
           <div className="flex justify-between items-center">
             <span className="text-gray-600">Contact</span>
             <span className="text-gray-900">{student.contactPhone}</span>
+          </div>
+          <div className="flex justify-between items-center">
+            <span className="text-gray-600">profiel created at </span>
+            <span className="text-gray-900">{createdat}</span>
           </div>
         </div>
       </div>
