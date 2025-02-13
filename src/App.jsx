@@ -5,6 +5,7 @@ import Dashboard from "./pages/dashboard";
 import Sidebars from "./component/sidebar/sidebar";
 import Students from "./pages/students";
 import Profilecard from "./component/profilecard/profilecard";
+import Courses from "./component/course/course";
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/students" element={<Students />} />
+        <Route path="/courses" element={<Courses />} />
         <Route path="/sidebar" element={<Sidebars />} />
       </Routes>
       </div>

@@ -71,7 +71,7 @@ export default function Sidebars() {
                 <School className="w-5 h-5" /> Classes:
               </Link>
               <Link
-                to="/orders"
+                to="/Courses"
                 className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
               >
                 <Book className="w-5 h-5" /> Courses
