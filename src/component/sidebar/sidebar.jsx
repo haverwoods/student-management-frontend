@@ -35,10 +35,10 @@ export default function Sidebars() {
           <Package className="w-5 h-5" /> total students
         </Link>
         <Link
-          to="/orders"
+          to="/teacher"
           className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
         >
-          <GraduationCap className="w-5 h-5" /> reports
+          <GraduationCap className="w-5 h-5" /> teachers
         </Link>
         <Link
           to="/orders"
