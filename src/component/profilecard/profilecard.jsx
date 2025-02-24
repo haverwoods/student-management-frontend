@@ -21,8 +21,20 @@ const createdat = created.toLocaleDateString('en-US', { // Adjust locale as need
       {/* Header Section */}
       <div className="flex items-start justify-between p-4">
         <div className="flex gap-3">
-          <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center">
+          {/* <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center">
             <User className="w-8 h-8 text-gray-400" />
+          </div> */}
+               <div className="w-14 h-14 bg-gray-100 rounded-lg flex items-center justify-center overflow-hidden">
+            {student.profileImage ? (
+              <img
+                src={student.profileImage}
+                alt={`${student.firstName}'s profile`}
+                className="w-full h-full object-cover"
+              />
+            ) : (
+              <User className="w-8 h-8 text-gray-400" />
+            )}
+                  {console.log('Image path:', `${student.profileImage}`)}
           </div>
           <div>
             <h2 className="text-lg font-medium text-gray-900">

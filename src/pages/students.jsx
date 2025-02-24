@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { toast } from "@/hooks/use-toast";
 
 const Students = () => {
   const [profiles, setProfiles] = useState([]);
@@ -24,6 +25,15 @@ const Students = () => {
       .then((res) => res.json())
       .then((data) => setProfiles(data))
       .catch((error) => console.error("Error fetching profiles:", error));
+      // Show welcome toast after a small delay
+  setTimeout(() => {
+    toast({
+      title: "Welcome to Student Management",
+      description: "Here you can view all students, search by name or roll number, add new students, and manage student profiles. Use the search bar above to find specific students.",
+      className: "bg-black text-white border border-gray-600",
+      duration: 5000, // Increased duration for better readability
+    });
+  }, 500); // Small delay for better UX
   }, []);
 
   const handleChanges = (event) => {
@@ -45,6 +55,7 @@ const Students = () => {
 
   // Handle pagination logic
   const totalPages = Math.ceil(filteredProfiles.length / profilesPerPage);
+
 
   const nextPage = () => {
     if (currentPage < totalPages) {
@@ -72,7 +83,7 @@ const Students = () => {
             className="bg-white hover:bg-gray-200 text-black border border-gray-300"
           >
             Add New Student
-          </Button>
+          </Button>         
         </div>
 
         {/* Search bar */}

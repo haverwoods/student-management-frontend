@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+// import { useToast } from "@/hooks/use-toast";
 import { toast, useToast } from "@/hooks/use-toast";
 import { CloudUpload } from "lucide-react";
 
@@ -21,47 +22,75 @@ export default function StudentForm({ onClose }) {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const { toast } = useToast();
+  // const { toast } = useToast();
+  
+  
 
-  // const handleFileChange = (event) => {
-  //   const file = event.target.files[0];
-  //   setImage(file);
-  //   setSelectedFiles(Array.from(event.target.files));
-  // };
   const handleFileChange = (event) => {
     // Update image state with the selected file
     setImage(event.target.files[0]);
-  };
+  }; 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    // Create a new FormData instance
+    const formDataToSend = new FormData();
+    
+    // Add all form fields explicitly
+    formDataToSend.append("rollNumber", formData.rollNumber);
+    formDataToSend.append("firstName", formData.firstName);
+    formDataToSend.append("lastName", formData.lastName);
+    formDataToSend.append("dateOfBirth", formData.dateOfBirth);
+    formDataToSend.append("grade", formData.grade);
+    formDataToSend.append("section", formData.section);
+    formDataToSend.append("contactPhone", formData.contactPhone);
+  
+    // Add the image if it exists
+    if (image) {
+      formDataToSend.append("profileImage", image, image.name); // Add filename
+    }
+  
     try {
       const response = await fetch("http://localhost:3000/api/students", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: formDataToSend,
       });
+  
+      const data = await response.json();
 
-      if (response.ok) {
-        toast({
-          title: "Success",
-          description: "Teacher registered successfully!",
-          variant: "success",
-        });
-        onClose(); // Close the form after submission
-      } else {
-        const data = await response.json();
-        alert(data.message || "Error registering student");
-      }
-    } catch (error) {
-      console.error("Error: server error", error.message);
-      alert("Server error!");
+    if (response.status === 200 || response.status === 201) {
+      toast({
+        title: "Success",
+        description: "Student registered successfully!",
+        className: "bg-black text-white",
+        duration: 3000,
+      });
+      onClose();
+    } else {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: data.message || "Error registering student",
+        duration: 3000,
+      });
     }
+  } catch (error) {
+    console.error("Error:", error);
+    toast({
+      variant: "destructive",
+      title: "Error",
+      description: "Server error!",
+      duration: 3000,
+    });
+  }
   };
-
+  
   return (
+    
     <form onSubmit={handleSubmit} className="space-y-2">
+    
+  
       {/* //image and file uplaod section */}
       <div className="flex items-center justify-between">
         <Label>Profile Picture</Label>
