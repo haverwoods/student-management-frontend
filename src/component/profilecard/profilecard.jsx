@@ -77,7 +77,7 @@ const createdat = created.toLocaleDateString('en-US', { // Adjust locale as need
             <span className="text-gray-900">{student.contactPhone}</span>
           </div>
           <div className="flex justify-between items-center">
-            <span className="text-gray-600">profiel created at </span>
+            <span className="text-gray-600">profile created at </span>
             <span className="text-gray-900">{createdat}</span>
           </div>
         </div>

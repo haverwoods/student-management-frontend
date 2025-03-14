@@ -8,6 +8,7 @@ import {
   GraduationCap,
   Mail,
   Book,
+  CalendarCheck,
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -54,7 +55,7 @@ export default function Sidebars() {
             onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
           >
             <span className="flex items-center gap-2">
-              <List className="w-5 h-5" /> Courses and classes
+              <List className="w-5 h-5" /> Classroom Management
             </span>
             <ChevronDown
               className={cn("w-5 h-5 transition-transform", {
@@ -75,6 +76,12 @@ export default function Sidebars() {
                 className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
               >
                 <Book className="w-5 h-5" /> Courses
+              </Link>
+              <Link
+                to="/Attendance"
+                className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
+              >
+                <CalendarCheck className="w-5 h-5" /> Attendance
               </Link>
             </div>
           )}

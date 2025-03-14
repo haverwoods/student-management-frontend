@@ -9,6 +9,7 @@ import Courses from "./component/course/course";
 import Teachers from "./pages/teacher";
 import { ToastProvider } from "./components/ui/toast";
 import { Toaster } from "./components/ui/toaster";
+import AttendanceTracker from "./pages/AttendanceTracker";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/students" element={<Students />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/teacher" element={<Teachers />} />
+        <Route path="/Attendance" element={<AttendanceTracker />} />
         <Route path="/sidebar" element={<Sidebars />} />
       </Routes>
       <Toaster/>
