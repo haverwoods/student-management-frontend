@@ -1,0 +1,46 @@
+"filename", "language", "JavaScript", "JSON", "JavaScript JSX", "CSS", "XML", "Markdown", "JSON with Comments", "HTML", "comment", "blank", "total"
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\README.md", "Markdown", 0, 0, 0, 0, 0, 5, 0, 0, 0, 4, 9
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\components.json", "JSON", 0, 21, 0, 0, 0, 0, 0, 0, 0, 0, 21
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\eslint.config.js", "JavaScript", 37, 0, 0, 0, 0, 0, 0, 0, 0, 2, 39
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\index.html", "HTML", 0, 0, 0, 0, 0, 0, 0, 13, 0, 1, 14
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\jsconfig.json", "JSON with Comments", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 10
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\package-lock.json", "JSON", 0, 6669, 0, 0, 0, 0, 0, 0, 0, 1, 6670
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\package.json", "JSON", 0, 51, 0, 0, 0, 0, 0, 0, 0, 1, 52
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\public\vite.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\App.jsx", "JavaScript JSX", 0, 0, 28, 0, 0, 0, 0, 0, 0, 11, 39
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\assets\react.svg", "XML", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\attendence\attendence.jsx", "JavaScript JSX", 0, 0, 138, 0, 0, 0, 0, 0, 0, 4, 142
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\course\course.jsx", "JavaScript JSX", 0, 0, 181, 0, 0, 0, 0, 0, 3, 17, 201
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\form\studentForm.jsx", "JavaScript JSX", 0, 0, 167, 0, 0, 0, 0, 0, 7, 17, 191
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\form\teacherform.jsx", "JavaScript JSX", 0, 0, 66, 0, 0, 0, 0, 0, 0, 10, 76
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\profilecard\profilecard.jsx", "JavaScript JSX", 0, 0, 75, 0, 0, 0, 0, 0, 9, 6, 90
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\sidebar\sidebar.jsx", "JavaScript JSX", 0, 0, 85, 0, 0, 0, 0, 0, 3, 5, 93
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\statscard\statscard.jsx", "JavaScript JSX", 0, 0, 31, 0, 0, 0, 0, 0, 1, 3, 35
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\table\User.jsx", "JavaScript JSX", 0, 0, 68, 0, 0, 0, 0, 0, 1, 8, 77
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\table\userform.jsx", "JavaScript JSX", 0, 0, 79, 0, 0, 0, 0, 0, 4, 7, 90
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\component\teacherprofile\teacherprofile.jsx", "JavaScript JSX", 0, 0, 45, 0, 0, 0, 0, 0, 6, 9, 60
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\avatar.jsx", "JavaScript JSX", 0, 0, 40, 0, 0, 0, 0, 0, 0, 6, 46
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\button.jsx", "JavaScript JSX", 0, 0, 44, 0, 0, 0, 0, 0, 0, 5, 49
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\calendar.jsx", "JavaScript JSX", 0, 0, 69, 0, 0, 0, 0, 0, 0, 4, 73
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\card.jsx", "JavaScript JSX", 0, 0, 42, 0, 0, 0, 0, 0, 0, 9, 51
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\chart.jsx", "JavaScript JSX", 0, 0, 273, 0, 0, 0, 0, 0, 2, 34, 309
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\dialog.jsx", "JavaScript JSX", 0, 0, 82, 0, 0, 0, 0, 0, 0, 13, 95
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\dropdown-menu.jsx", "JavaScript JSX", 0, 0, 139, 0, 0, 0, 0, 0, 0, 18, 157
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\input.jsx", "JavaScript JSX", 0, 0, 21, 0, 0, 0, 0, 0, 0, 4, 25
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\label.jsx", "JavaScript JSX", 0, 0, 12, 0, 0, 0, 0, 0, 0, 5, 17
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\popover.jsx", "JavaScript JSX", 0, 0, 40, 0, 0, 0, 0, 0, 0, 8, 48
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\scroll-area.jsx", "JavaScript JSX", 0, 0, 45, 0, 0, 0, 0, 0, 0, 5, 50
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\table.jsx", "JavaScript JSX", 0, 0, 76, 0, 0, 0, 0, 0, 0, 11, 87
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\tabs.jsx", "JavaScript JSX", 0, 0, 54, 0, 0, 0, 0, 0, 0, 7, 61
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\toast.jsx", "JavaScript JSX", 0, 0, 75, 0, 0, 0, 0, 0, 0, 11, 86
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\components\ui\toaster.jsx", "JavaScript JSX", 0, 0, 31, 0, 0, 0, 0, 0, 0, 3, 34
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\hooks\use-toast.js", "JavaScript", 128, 0, 0, 0, 0, 0, 0, 0, 3, 25, 156
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\index.css", "CSS", 0, 0, 0, 99, 0, 0, 0, 0, 1, 7, 107
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\lib\utils.js", "JavaScript", 5, 0, 0, 0, 0, 0, 0, 0, 0, 2, 7
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\main.jsx", "JavaScript JSX", 0, 0, 12, 0, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\pages\AttendanceTracker.jsx", "JavaScript JSX", 0, 0, 448, 0, 0, 0, 0, 0, 13, 27, 488
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\pages\dashboard.jsx", "JavaScript JSX", 0, 0, 192, 0, 0, 0, 0, 0, 20, 9, 221
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\pages\students.jsx", "JavaScript JSX", 0, 0, 124, 0, 0, 0, 0, 0, 10, 16, 150
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\src\pages\teacher.jsx", "JavaScript JSX", 0, 0, 125, 0, 0, 0, 0, 0, 10, 15, 150
+"c:\Users\Acer\OneDrive\Desktop\PROJECTS\student management frontend\vite.config.js", "JavaScript", 15, 0, 0, 0, 0, 0, 0, 0, 1, 3, 19
+"Total", "-", 185, 6741, 2907, 99, 2, 5, 10, 13, 94, 355, 10411
