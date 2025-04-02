@@ -9,12 +9,14 @@ import {
   Mail,
   Book,
   CalendarCheck,
+  Shapes,
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Sidebars() {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const [CategoriesOpen, setCategoriesOpen] = useState(false);
 
   return (
     <div className="h-screen w-64 bg-[#121212] text-white flex flex-col p-4">
@@ -35,12 +37,29 @@ export default function Sidebars() {
         >
           <Package className="w-5 h-5" /> total students
         </Link>
-        <Link
-          to="/teacher"
-          className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
+        <div
+          className="flex items-center justify-between p-2 hover:bg-gray-700 rounded cursor-pointer"
+          onClick={() => setCategoriesOpen(!CategoriesOpen)}
         >
-          <GraduationCap className="w-5 h-5" /> teachers
-        </Link>
+          <span className="flex items-center gap-2">
+            <Shapes className="w-5 h-5" /> teacher Management
+          </span>
+          <ChevronDown
+            className={cn("w-5 h-5 transition-transform", {
+              "rotate-180": CategoriesOpen,
+            })}
+          />
+        </div>
+        {CategoriesOpen && (
+          <div className="ml-6 space-y-2 mt-2 text-gray-300">
+            <Link
+              to="/teacher"
+              className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
+            >
+              <GraduationCap className="w-5 h-5" /> teachers
+            </Link>
+          </div>
+        )}
         <Link
           to="/orders"
           className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
@@ -55,7 +74,7 @@ export default function Sidebars() {
             onClick={() => setIsCategoriesOpen(!isCategoriesOpen)}
           >
             <span className="flex items-center gap-2">
-              <List className="w-5 h-5" /> Classroom Management
+              <Shapes className="w-5 h-5" /> Classroom Management
             </span>
             <ChevronDown
               className={cn("w-5 h-5 transition-transform", {
@@ -66,10 +85,10 @@ export default function Sidebars() {
           {isCategoriesOpen && (
             <div className="ml-6 space-y-2 mt-2 text-gray-300">
               <Link
-                to="/orders"
+                to="/Courses"
                 className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
               >
-                <School className="w-5 h-5" /> Classes:
+                <School className="w-5 h-5" /> Class
               </Link>
               <Link
                 to="/Courses"
