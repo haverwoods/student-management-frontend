@@ -10,14 +10,14 @@ import Teachers from "./pages/teacher";
 import { ToastProvider } from "./components/ui/toast";
 import { Toaster } from "./components/ui/toaster";
 import AttendanceTracker from "./pages/AttendanceTracker";
+import Exam from "./pages/exam";
+import Fees from "./pages/fees";
 
 
 const App = () => {
   return (
     
-      <div className=" ">
-    
-
+      <div className=" ">  
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -25,6 +25,8 @@ const App = () => {
         <Route path="/courses" element={<Courses />} />
         <Route path="/teacher" element={<Teachers />} />
         <Route path="/Attendance" element={<AttendanceTracker />} />
+        <Route path="/exam" element={<Exam />} />
+        <Route path="/fees" element={<Fees />} />
         <Route path="/sidebar" element={<Sidebars />} />
       </Routes>
       <Toaster/>

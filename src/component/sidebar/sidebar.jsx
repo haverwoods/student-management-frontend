@@ -10,6 +10,8 @@ import {
   Book,
   CalendarCheck,
   Shapes,
+  BookCheck,
+  CircleDollarSign,
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -66,7 +68,18 @@ export default function Sidebars() {
         >
           <Mail className="w-5 h-5" /> notifications
         </Link>
-
+        <Link
+          to="/orders"
+          className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
+        >
+          <BookCheck className="w-5 h-5" /> exam
+        </Link>
+        <Link
+          to="/orders"
+          className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
+        >
+          <CircleDollarSign className="w-5 h-5" /> finance
+        </Link>
         {/* Categories Dropdown */}
         <div>
           <div
