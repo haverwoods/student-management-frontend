@@ -17,7 +17,7 @@ import { CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import Sidebars from "@/component/sidebar/sidebar";
 import Attendance from "@/component/attendence/attendence";
-
+import Attendencestats from "@/component/statscard/attendencestats";
 
 const AttendanceTracker = () => {
   // Sample student data (would come from API in real app)
@@ -212,60 +212,10 @@ const AttendanceTracker = () => {
             </PopoverContent>
           </Popover>
         </div>
-        //attendece stats card
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">
-                Total Students
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold">{stats.total}</div>
-            </CardContent>
-          </Card>
-          <Card className="bg-green-50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Present</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-green-600">
-                {stats.present}
-              </div>
-              <p className="text-xs text-muted-foreground">
-                {Math.round((stats.present / stats.total) * 100)}% of class
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-red-50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Absent</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-red-600">
-                {stats.absent}
-              </div>
-              <p className="text-xs text-muted-foreground">
-                {Math.round((stats.absent / stats.total) * 100)}% of class
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="bg-amber-50">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium">Unmarked</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="text-2xl font-bold text-amber-600">
-                {stats.unmarked}
-              </div>
-              <p className="text-xs text-muted-foreground">
-                {Math.round((stats.unmarked / stats.total) * 100)}% of class
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-        {/* <Attendencestats      
-        /> */}
+        {/* attendece stats card */}
+        <Attendencestats 
+        stats={stats}  
+        />
         {/* //attendece table  */}
         <Attendance
           date={date}
