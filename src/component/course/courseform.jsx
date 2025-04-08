@@ -10,8 +10,14 @@ const Courseform = ({ onClose }) => {
     grade: "",
     section: "",
     teacher: "",
-    schedule: "",
+    schedule: {
+        startDay: "", 
+        endDay: "", 
+        startTime: "", 
+        endTime: ""
+      },
   });
+  const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,15 +61,6 @@ const Courseform = ({ onClose }) => {
           />
         </div>
 
-        <div>
-          <Label htmlFor="section">Section</Label>
-          <Input
-            id="section"
-            value={formData.section}
-            onChange={(e) => setFormData({ ...formData, section: e.target.value })}
-            required
-          />
-        </div>
 
         <div>
           <Label htmlFor="teacher">Assigned Teacher</Label>
@@ -75,14 +72,72 @@ const Courseform = ({ onClose }) => {
           />
         </div>
 
-        <div>
-          <Label htmlFor="schedule">Schedule</Label>
-          <Input
-            id="schedule"
-            placeholder="e.g., Mon & Wed 9AM-10AM"
-            value={formData.schedule}
-            onChange={(e) => setFormData({ ...formData, schedule: e.target.value })}
-          />
+        
+               {/* Structured Schedule */}
+               <div className="grid grid-cols-2 gap-4">
+          <div>
+            <Label>Start Day</Label>
+            <select
+              value={formData.schedule.startDay}
+              onChange={(e) =>
+                setFormData({ 
+                  ...formData, 
+                  schedule: { ...formData.schedule, startDay: e.target.value } 
+                })
+              }
+              className="w-full p-2 border rounded"
+            >
+              {days.map((day) => (
+                <option key={day} value={day}>{day}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <Label>End Day</Label>
+            <select
+              value={formData.schedule.endDay}
+              onChange={(e) =>
+                setFormData({ 
+                  ...formData, 
+                  schedule: { ...formData.schedule, endDay: e.target.value } 
+                })
+              }
+              className="w-full p-2 border rounded"
+            >
+              {days.map((day) => (
+                <option key={day} value={day}>{day}</option>
+              ))}
+            </select>
+          </div>
+
+          <div>
+            <Label>Start Time</Label>
+            <Input
+              type="time"
+              value={formData.schedule.startTime}
+              onChange={(e) =>
+                setFormData({ 
+                  ...formData, 
+                  schedule: { ...formData.schedule, startTime: e.target.value } 
+                })
+              }
+            />
+          </div>
+
+          <div>
+            <Label>End Time</Label>
+            <Input
+              type="time"
+              value={formData.schedule.endTime}
+              onChange={(e) =>
+                setFormData({ 
+                  ...formData, 
+                  schedule: { ...formData.schedule, endTime: e.target.value } 
+                })
+              }
+            />
+          </div>
         </div>
 
         <Button type="submit" className="w-full">
