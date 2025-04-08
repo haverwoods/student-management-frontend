@@ -31,7 +31,7 @@ const Students = () => {
       title: "Welcome to Student Management",
       description: "Here you can view all students, search by name or roll number, add new students, and manage student profiles. Use the search bar above to find specific students.",
       className: "bg-black text-white border border-gray-600",
-      duration: 5000, // Increased duration for better readability
+      duration: 3000, // Increased duration for better readability
     });
   }, 500); // Small delay for better UX
   }, []);

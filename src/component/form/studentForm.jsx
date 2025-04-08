@@ -71,7 +71,7 @@ export default function StudentForm({ onClose }) {
       toast({
         variant: "destructive",
         title: "Error",
-        description: data.message || "Error registering student",
+        description: data.error|| data.message || "Error registering student data",
         duration: 3000,
       });
     }

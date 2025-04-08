@@ -69,16 +69,16 @@ export default function Sidebars() {
           <Mail className="w-5 h-5" /> notifications
         </Link>
         <Link
-          to="/orders"
+          to="/exam"
           className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
         >
           <BookCheck className="w-5 h-5" /> exam
         </Link>
         <Link
-          to="/orders"
+          to="/fees"
           className="flex items-center gap-2 p-2 hover:bg-gray-700 rounded"
         >
-          <CircleDollarSign className="w-5 h-5" /> finance
+          <CircleDollarSign className="w-5 h-5" /> fees
         </Link>
         {/* Categories Dropdown */}
         <div>

@@ -1,9 +1,14 @@
-import React from 'react'
+import Sidebars from "@/component/sidebar/sidebar";
+import React from "react";
 
 const Exam = () => {
   return (
-    <div>exam</div>
-  )
-}
+    <div>
+      <div className="fixed top-0 left-0 h-full">
+        <Sidebars />
+      </div>
+    </div>
+  );
+};
 
-export default Exam
+export default Exam;
