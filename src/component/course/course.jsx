@@ -10,6 +10,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import Courseform from "./courseform";
 
 // Course Card Component
 const CourseCard = ({ course }) => {
@@ -27,65 +28,65 @@ const CourseCard = ({ course }) => {
 };
 
 // Course Form Component
-const CourseForm = ({ onClose }) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    grade: "",
-    section: "",
-  });
+// const CourseForm = ({ onClose }) => {
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     grade: "",
+//     section: "",
+//   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await fetch("/api/courses", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-      if (response.ok) {
-        onClose();
-      }
-    } catch (error) {
-      console.error("Error creating course:", error);
-    }
-  };
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const response = await fetch("/api/courses", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(formData),
+//       });
+//       if (response.ok) {
+//         onClose();
+//       }
+//     } catch (error) {
+//       console.error("Error creating course:", error);
+//     }
+//   };
 
-  return (
-    <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <Label htmlFor="name">Course Name</Label>
-        <Input
-          id="name"
-          value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          required
-        />
-      </div>
-      <div>
-        <Label htmlFor="grade">Grade</Label>
-        <Input
-          id="grade"
-          type="number"
-          value={formData.grade}
-          onChange={(e) => setFormData({ ...formData, grade: parseInt(e.target.value) })}
-          required
-        />
-      </div>
-      <div>
-        <Label htmlFor="section">Section</Label>
-        <Input
-          id="section"
-          value={formData.section}
-          onChange={(e) => setFormData({ ...formData, section: e.target.value })}
-          required
-        />
-      </div>
-      <Button type="submit" className="w-full">Add Course</Button>
-    </form>
-  );
-};
+//   return (
+//     <form onSubmit={handleSubmit} className="space-y-4">
+//       <div>
+//         <Label htmlFor="name">Course Name</Label>
+//         <Input
+//           id="name"
+//           value={formData.name}
+//           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+//           required
+//         />
+//       </div>
+//       <div>
+//         <Label htmlFor="grade">Grade</Label>
+//         <Input
+//           id="grade"
+//           type="number"
+//           value={formData.grade}
+//           onChange={(e) => setFormData({ ...formData, grade: parseInt(e.target.value) })}
+//           required
+//         />
+//       </div>
+//       <div>
+//         <Label htmlFor="section">Section</Label>
+//         <Input
+//           id="section"
+//           value={formData.section}
+//           onChange={(e) => setFormData({ ...formData, section: e.target.value })}
+//           required
+//         />
+//       </div>
+//       <Button type="submit" className="w-full">Add Course</Button>
+//     </form>
+//   );
+// };
 
 // Main Courses Component
 const Courses = () => {
@@ -158,7 +159,7 @@ const Courses = () => {
             <DialogHeader>
               <DialogTitle>Add New Course</DialogTitle>
             </DialogHeader>
-            <CourseForm onClose={() => setShowForm(false)} />
+            <Courseform onClose={() => setShowForm(false)} />
           </DialogContent>
         </Dialog>
 

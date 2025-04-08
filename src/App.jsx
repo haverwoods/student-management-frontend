@@ -12,7 +12,7 @@ import { Toaster } from "./components/ui/toaster";
 import AttendanceTracker from "./pages/AttendanceTracker";
 import Exam from "./pages/exam";
 import Fees from "./pages/fees";
-import Counter from "./pages/counter";
+
 
 
 const App = () => {
@@ -29,7 +29,6 @@ const App = () => {
         <Route path="/exam" element={<Exam />} />
         <Route path="/fees" element={<Fees />} />
         <Route path="/sidebar" element={<Sidebars />} />
-        <Route path="/counter" element={<Counter />} />
       </Routes>
       <Toaster/>
         

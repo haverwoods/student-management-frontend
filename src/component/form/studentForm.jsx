@@ -23,20 +23,18 @@ export default function StudentForm({ onClose }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   // const { toast } = useToast();
-  
-  
 
   const handleFileChange = (event) => {
     // Update image state with the selected file
     setImage(event.target.files[0]);
-  }; 
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     // Create a new FormData instance
     const formDataToSend = new FormData();
-    
+
     // Add all form fields explicitly
     formDataToSend.append("rollNumber", formData.rollNumber);
     formDataToSend.append("firstName", formData.firstName);
@@ -45,52 +43,53 @@ export default function StudentForm({ onClose }) {
     formDataToSend.append("grade", formData.grade);
     formDataToSend.append("section", formData.section);
     formDataToSend.append("contactPhone", formData.contactPhone);
-  
+
     // Add the image if it exists
     if (image) {
       formDataToSend.append("profileImage", image, image.name); // Add filename
     }
-  
+
     try {
       const response = await fetch("http://localhost:3000/api/students", {
         method: "POST",
         body: formDataToSend,
       });
-  
+
       const data = await response.json();
 
-    if (response.status === 200 || response.status === 201) {
-      toast({
-        title: "Success",
-        description: "Student registered successfully!",
-        className: "bg-black text-white",
-        duration: 3000,
-      });
-      onClose();
-    } else {
+      console.log("API Error Response:", data); // 👈 See what you actually get back
+
+      if (response.status === 200 || response.status === 201) {
+        toast({
+          title: "Success",
+          description: "Student registered successfully!",
+          className: "bg-black text-white",
+          duration: 3000,
+        });
+        onClose();
+      } else {
+        toast({
+          variant: "destructive",
+          title: "Error",
+           description: data || "Error registering student data",
+          
+
+          duration: 3000,
+        });
+      }
+    } catch (error) {
+      console.error("Error:", error);
       toast({
         variant: "destructive",
         title: "Error",
-        description: data.error|| data.message || "Error registering student data",
+        description: "Server error!",
         duration: 3000,
       });
     }
-  } catch (error) {
-    console.error("Error:", error);
-    toast({
-      variant: "destructive",
-      title: "Error",
-      description: "Server error!",
-      duration: 3000,
-    });
-  }
   };
-  
+
   return (
-    
     <form onSubmit={handleSubmit} className="space-y-2">
-    
-  
       {/* //image and file uplaod section */}
       <div className="flex items-center justify-between">
         <Label>Profile Picture</Label>
@@ -109,7 +108,7 @@ export default function StudentForm({ onClose }) {
           onChange={handleFileChange}
           multiple
         />
-         {image && (
+        {image && (
           <img
             src={URL.createObjectURL(image)}
             alt="Profile Preview"
