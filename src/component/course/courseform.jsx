@@ -27,6 +27,31 @@ const Courseform = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    //to check all data
+    console.log(formData);
+    // Check if all required fields are filled
+    const requiredFields = [
+      "name",
+      "grade",
+      "section",
+      "startDay",
+      "endDay",
+      "startTime",
+      "endTime",
+    ];
+    for (let field of requiredFields) {
+      if (!formData[field]) {
+        console.log("formData before submit:", formData);
+        // Show toast notification for the missing field
+        toast({
+          title: "Error",
+          description: `${field} is required!`,
+          duration: 3000,
+        });
+        return;
+      }
+      
+    }
     try {
       const response = await fetch("http://localhost:3000/api/courses", {
         method: "POST",
@@ -36,11 +61,8 @@ const Courseform = ({ onClose }) => {
         body: JSON.stringify(formData),
       });
 
-      //   if (response.ok) {
-      //     onClose();
-      //   }
       const data = await response.json();
-      console.log("API Error Response:", data); // 👈 See what you actually get back
+      console.log("API Error Response:", data);
 
       if (response.ok) {
         toast({
@@ -105,7 +127,7 @@ const Courseform = ({ onClose }) => {
         </div>
 
         <div>
-          <Label htmlFor="teacher">Assigned Teacher</Label>
+          <Label htmlFor="teacher">Assigned Teacher ID</Label>
           <Input
             id="teacher"
             placeholder="add teacher name"
@@ -116,7 +138,6 @@ const Courseform = ({ onClose }) => {
           />
         </div>
 
-        {/* Structured Schedule */}
         <div className="grid grid-cols-2 gap-4">
           <div>
             <Label>Start Day</Label>
@@ -130,6 +151,8 @@ const Courseform = ({ onClose }) => {
               }
               className="w-full p-2 border rounded"
             >
+                <option value="">Select start day</option>
+
               {days.map((day) => (
                 <option key={day} value={day}>
                   {day}
