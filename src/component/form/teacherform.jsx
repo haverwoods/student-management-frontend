@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,14 +12,28 @@ export default function TeacherForm({ onClose }) {
     phone: "",
   });
   const { toast } = useToast();
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      toast({
+        title: "Welcome to Teacher Management",
+        description: "Here you can view all teachers, add new teachers, and manage teacher profiles. Use the search bar above to find specific teachers.",
+        className: "bg-black text-white",
+        duration: 3000,
+      });
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, []); // Empty dependency array to run only once on mount
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
+ 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form data before sending", formData);
+
 
     try {
       const response = await fetch("http://localhost:3000/api/teacher", {
@@ -29,6 +43,7 @@ export default function TeacherForm({ onClose }) {
       },
       body: JSON.stringify(formData),
       });
+
       
       
       const data = await response.json();

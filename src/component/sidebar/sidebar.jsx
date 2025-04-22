@@ -51,6 +51,7 @@ export default function Sidebars() {
               "rotate-180": CategoriesOpen,
             })}
           />
+          {/* this is a test */}
         </div>
         {CategoriesOpen && (
           <div className="ml-6 space-y-2 mt-2 text-gray-300">
